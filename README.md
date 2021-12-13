@@ -90,3 +90,10 @@ open -a Simulator
 <img width="509" alt="스크린샷 2021-12-13 오후 3 59 09" src="https://user-images.githubusercontent.com/72638829/145766514-7b917df3-4144-4bcb-8fc9-9117fafe5fa6.png">  
 `F5`를 클릭하여 디버깅모드로 진입하면 된다.  
 (이 경우 save만 해도 자동으로 핫리로드가 된다.)
+
+
+## 에러 모음
+### 앱 실행 시 iproxy 관련 에러 뜬다면?
+빨강 동그라미 친 부분에 iproxy 관련 메시지가 뜰 것이다. 허용해주자.
+<img width="652" alt="스크린샷 2021-12-13 오후 4 15 14" src="https://user-images.githubusercontent.com/72638829/145768438-b09a6dce-bcb3-49ca-aa97-ae90ef11e6b0.png"> 
+
