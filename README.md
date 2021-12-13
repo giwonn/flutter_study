@@ -116,3 +116,13 @@ open -a Simulator
 해당 프로젝트를 열고 나서 오른쪽 아래에 에뮬레이터를 지정해주고,  
 `F5`를 클릭하여 디버깅모드로 진입하면 된다.  
 (이 경우 save만 해도 자동으로 핫리로드가 된다.)
+
+## 에러 모음
+### 앱 실행 시 iproxy 관련 에러 뜬다면?
+빨강 동그라미 친 부분에 iproxy 관련 메시지가 뜰 것이다. 허용해주자.
+<img width="652" alt="스크린샷 2021-12-13 오후 4 15 14" src="https://user-images.githubusercontent.com/72638829/145768438-b09a6dce-bcb3-49ca-aa97-ae90ef11e6b0.png"> 
+
+### 아래 이미지같은 warning이 뜰 경우
+![image](https://user-images.githubusercontent.com/72638829/145819757-d6e6d610-cb2b-4d6c-b035-863072c2a9dd.png)  
+1. 프로젝트에서 `android > gradle > wrapper > gradle-wrapper.properties`의 distributionUrl의 gradle 버전을 `7.0.2` 이상으로 바꿔주자.  
+2. `android > build.gradle`에서 `dependencies`의 gradle 버전을 `7.0.2` 이상으로 바꿔주자.
