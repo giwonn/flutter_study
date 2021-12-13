@@ -87,5 +87,6 @@ open -a Simulator
 
 ### vscode로 앱 실행하기
 해당 프로젝트를 열고 나서 오른쪽 아래에 에뮬레이터를 지정해주고,  
+<img width="509" alt="스크린샷 2021-12-13 오후 3 59 09" src="https://user-images.githubusercontent.com/72638829/145766514-7b917df3-4144-4bcb-8fc9-9117fafe5fa6.png">  
 `F5`를 클릭하여 디버깅모드로 진입하면 된다.  
 (이 경우 save만 해도 자동으로 핫리로드가 된다.)
