@@ -3,7 +3,6 @@ vscode를 사용한다는 가정 하에 개발환경 설정을 진행합니다.
 
 ## 설치할 프로그램
 ### [VScode](https://code.visualstudio.com/)
-<br>
 
 ### [Android Studio](https://developer.android.com/studio?hl=ko)  
 extensions에서 flutter 검색 후 설치
