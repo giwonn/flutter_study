@@ -11,7 +11,7 @@ void main() {
         ),
         body: const Center(
           child: Image(
-            image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/300px-Gull_portrait_ca_usa.jpg'),
+            image: AssetImage('images/diamond.png'),
           ),
         ),
       ),
