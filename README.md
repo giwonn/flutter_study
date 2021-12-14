@@ -1,4 +1,5 @@
 # 플러터 개발환경 설정 방법 (MacOS 기준)
+강의 : [The Complete 2021 Flutter Development Bootcamp with Dart](https://www.udemy.com/course/flutter-bootcamp-with-dart/)
 
 vscode를 사용한다는 가정 하에 개발환경 설정을 진행합니다.
 
