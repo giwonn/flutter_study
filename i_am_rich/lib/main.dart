@@ -4,14 +4,13 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueGrey,
         appBar: AppBar(
-          title: const Text("I Am Rich"),
-          backgroundColor: Colors.blueGrey[900],
+          title: const Text('I Am Poor'),
+          backgroundColor: Colors.amber,
         ),
         body: const Center(
           child: Image(
-            image: AssetImage('images/diamond.png'),
+            image: AssetImage(''),
           ),
         ),
       ),
