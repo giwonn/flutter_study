@@ -125,6 +125,10 @@ open -a Simulator
 
 ## 에러 모음
 
+### Android embedding v2 업그레이드 하라고 하는 경우
+[https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects](https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects)  
+**Full-Flutter app migration** 부분 따라하면 됨  
+
 ### 앱 실행 시 iproxy 관련 에러 뜬다면?
 
 빨강 동그라미 친 부분에 iproxy 관련 메시지가 뜰 것이다. 허용해주자.
