@@ -1,8 +1,12 @@
+import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'reusable_card.dart';
-import 'icon_content.dart';
-import 'constants.dart';
+import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/components/icon_content.dart';
+import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/components/round_icon_button.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
 
 enum Gender {
   male,
@@ -40,8 +44,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     colour: selectedGender == Gender.male
-                        ? activeCardColour
-                        : inactiveCardColour,
+                        ? kActiveCardColour
+                        : kInactiveCardColour,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: 'MALE',
@@ -56,8 +60,8 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     colour: selectedGender == Gender.female
-                        ? activeCardColour
-                        : inactiveCardColour,
+                        ? kActiveCardColour
+                        : kInactiveCardColour,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
@@ -72,13 +76,13 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: activeCardColour,
+                    colour: kActiveCardColour,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           'HEIGHT',
-                          style: labelTextStyle,
+                          style: kLabelTextStyle,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -87,11 +91,11 @@ class _InputPageState extends State<InputPage> {
                           children: <Widget>[
                             Text(
                               height.toString(),
-                              style: numberTextStyle,
+                              style: kNumberTextStyle,
                             ),
                             Text(
                               'cm',
-                              style: labelTextStyle,
+                              style: kLabelTextStyle,
                             )
                           ],
                         ),
@@ -129,17 +133,17 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: activeCardColour,
+                    colour: kActiveCardColour,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           'WEIGHT',
-                          style: labelTextStyle,
+                          style: kLabelTextStyle,
                         ),
                         Text(
                           weight.toString(),
-                          style: numberTextStyle,
+                          style: kNumberTextStyle,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -171,17 +175,17 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: activeCardColour,
+                    colour: kActiveCardColour,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           'AGE',
-                          style: labelTextStyle,
+                          style: kLabelTextStyle,
                         ),
                         Text(
                           age.toString(),
-                          style: numberTextStyle,
+                          style: kNumberTextStyle,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -214,36 +218,26 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: bottomContainerColour,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: bottomContainerHeight,
-          )
+          BottomButton(
+            buttonTitle: 'CALCULATE',
+            onTap: () {
+              CalculatorBrain calc =
+                  CalculatorBrain(height: height, weight: weight);
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(
+                    bmiResult: calc.calculateBMI(),
+                    resultText: calc.getResult(),
+                    interpretation: calc.getInterpretation(),
+                  ),
+                ),
+              );
+            },
+          ),
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon, @required this.onPressed});
-
-  final IconData icon;
-  final Function onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      elevation: 0.0,
-      child: Icon(icon),
-      onPressed: onPressed,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
